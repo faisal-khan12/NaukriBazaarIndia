@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable-v21/ic_bg1.xml" value="0.1425" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable-v21/ic_check.xml" value="0.1425" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable-v21/ic_dropdown.xml" value="0.1425" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable-v21/ic_notification.xml" value="0.1425" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable/avatar_placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/drawable/avatar_placeholder_click.xml" value="0.1" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/activity_job_details.xml" value="0.33" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/activity_otpactivity.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/drop_down.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/fragment_job.xml" value="0.2" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/fragment_profile.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/job_list_layout.xml" value="0.33" />
+        <entry key="..\:/Users/Faisal/OneDrive/Documents/Downloads/Naukri Bazaar india/Naukri Bazaar india/app/src/main/res/layout/selected_items.xml" value="0.19583333333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -42,6 +42,10 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1C58F2</color>
+    <color name="darkgreen">#07864B</color>
+    <color name="darkblc">#181A1F</color>
+
 
 
     <color name="green">#6EDB47</color>

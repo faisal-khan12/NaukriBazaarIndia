@@ -3,6 +3,7 @@ package com.appstacks.indiannaukribazaar.NewFragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.appstacks.indiannaukribazaar.FirebaseAdapters.JobAdapter;
@@ -42,6 +44,10 @@ public class JobFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
+
         binding = FragmentJobBinding.inflate(inflater,container,false);
 
         jobRef = FirebaseDatabase.getInstance().getReference("AdminPanel").child("job");
@@ -100,6 +106,21 @@ public class JobFragment extends Fragment {
 
         return binding.getRoot();
     }
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
+
+
 
 
 }

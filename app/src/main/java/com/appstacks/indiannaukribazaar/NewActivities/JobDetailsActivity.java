@@ -38,15 +38,19 @@ public class JobDetailsActivity extends AppCompatActivity {
         jobLocation = getIntent().getStringExtra("location");
 
 
-        binding.titlejob.setText(jobTitle);
-        binding.companyjob.setText(companyName);
+        binding.jobtitle.setText(jobTitle);
+        binding.companyname.setText(companyName);
         binding.locationJob.setText(jobLocation);
         binding.descriptionjob.setText(jobDescription);
+        binding.salaryRange.setText(salaryRange);
+        binding.applybefore.setText(applyBefore);
+        binding.jobPriceINR.setText(jobPriceINR);
+
 
         try {
             Glide.with(JobDetailsActivity.this).load(jobImg)
                     .placeholder(R.drawable.avatar_placeholder)
-                    .into(binding.img);
+                    .into(binding.icJob);
         } catch (Exception e) {
             e.printStackTrace();
         }
