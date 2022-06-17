@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".NewActivities.User_ProfileActivity">
+
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/back_btn_bg"
+        android:padding="10dp"
+        app:tint="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <TextView
+        android:id="@+id/completeYourProfileTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/inter"
+        android:text="Complete Your Profile"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backBtn"
+        app:layout_constraintTop_toTopOf="@+id/backBtn" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/tops_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/email_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:text="Email Address"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/email_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/green_border_edt"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textColorHint="#91D17B"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/email_tv"
+                app:layout_constraintTop_toBottomOf="@+id/email_tv" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Name"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/email_box"
+                app:layout_constraintTop_toBottomOf="@+id/email_box" />
+
+            <EditText
+                android:id="@+id/name_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/green_border_edt"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Enter Your Full Name"
+                android:inputType="textPersonName"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textColorHint="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/email_box"
+                app:layout_constraintStart_toStartOf="@+id/name_tv"
+                app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+            <TextView
+                android:id="@+id/gender_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Gender"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/name_box"
+                app:layout_constraintTop_toBottomOf="@+id/name_box" />
+
+            <AutoCompleteTextView
+                android:id="@+id/gender_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/green_border_edt"
+                android:drawableStart="@drawable/gender_1"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Select Your Gender"
+                android:inputType="none"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textColorHint="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/name_box"
+                app:layout_constraintStart_toStartOf="@+id/gender_tv"
+                app:layout_constraintTop_toBottomOf="@+id/gender_tv" />
+
+            <TextView
+                android:id="@+id/dateBirth_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Date of Birth"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/gender_box"
+                app:layout_constraintTop_toBottomOf="@+id/gender_box" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/green_border_edt"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingEnd="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/gender_box"
+                app:layout_constraintStart_toStartOf="@+id/dateBirth_tv"
+                app:layout_constraintTop_toBottomOf="@+id/dateBirth_tv">
+
+                <!--            <EditText-->
+                <!--                android:id="@+id/dateBirth_box"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:background="@null"-->
+                <!--                android:drawablePadding="10dp"-->
+                <!--                android:ems="10"-->
+                <!--                android:hint="date of birth"-->
+                <!--                android:inputType="textPersonName"-->
+                <!--                android:paddingStart="10dp"-->
+                <!--                android:paddingTop="15dp"-->
+                <!--                android:paddingEnd="5dp"-->
+                <!--                android:paddingBottom="15dp"-->
+                <!--                android:textColorHint="@color/green"-->
+                <!--                android:textSize="20sp" />-->
+
+
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/masked_dob_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="dd / mm / yyyy"
+                    android:inputType="number"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/green" />
+
+
+                <!--            <com.github.pinball83.maskededittext.MaskedEditText-->
+                <!--                android:id="@+id/masked_dob_Tv"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:background="@null"-->
+                <!--                android:hint="01/01/2000"-->
+                <!--                android:inputType="number"-->
+                <!--                android:paddingStart="15dp"-->
+                <!--                android:paddingTop="15dp"-->
+                <!--                android:paddingEnd="5dp"-->
+                <!--                android:paddingBottom="15dp"-->
+                <!--                app:maskIconColor="@color/green"-->
+                <!--                app:notMaskedSymbol="*" />-->
+
+                <ImageView
+                    android:id="@+id/calendarDOB"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:tint="@color/grey_60"
+                    app:srcCompat="@drawable/newcalendar" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/green"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

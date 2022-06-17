@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".NewActivities.OTPActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/tops_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ImageView
+            android:id="@+id/imageViewClick"
+            android:layout_width="200dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/otp_drawable"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/otp_authentication"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewClick"
+            app:layout_constraintStart_toStartOf="@+id/imageViewClick"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewClick" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:text="@string/otp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/otpnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/otp2"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <!--        <com.mukesh.mukeshotpview.mukeshOtpView.MukeshOtpView-->
+        <!--            android:id="@+id/inBuildRectangleOtpView"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="32dp"-->
+        <!--            android:inputType="number"-->
+        <!--            app:itemHeight="60dp"-->
+        <!--            android:itemBackground="@color/green"-->
+        <!--            android:textColor="@android:color/black"-->
+        <!--            android:textSize="18sp"-->
+        <!--            app:hideLineWhenFilled="false"-->
+        <!--            app:itemCount="6"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/textView2"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textView2"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+        <!--            app:lineColor="@color/green"-->
+        <!--            app:viewType="line"-->
+        <!--            tools:ignore="MissingClass" />-->
+
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+
+            android:textColor="#ffffff"
+            app:bar_active_color="@color/black"
+            app:bar_enabled="true"
+            app:bar_error_color="#D50000"
+            app:bar_height="2dp"
+            app:bar_inactive_color="@color/green"
+            app:box_margin="6dp"
+            app:height="60dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/otpnumber"
+            app:length="6"
+            app:otp_box_background="@drawable/otpviewshape"
+            app:otp_text_size="24dp"
+            app:width="40dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/inter"
+            android:text="Didn't get an OTP? request in "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/otp_view"
+            app:layout_constraintTop_toBottomOf="@+id/otp_view" />
+
+        <TextView
+            android:id="@+id/resendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="RESEND OTP"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/otp_view"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+        <LinearLayout
+            android:id="@+id/countdownlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/resendBtn"
+            app:layout_constraintEnd_toEndOf="@+id/resendBtn"
+            app:layout_constraintStart_toStartOf="@+id/resendBtn"
+            app:layout_constraintTop_toTopOf="@+id/resendBtn">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 00 : "
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/countDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 00"
+                android:textAllCaps="true"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorBackground"
+    app:contentInsetStartWithNavigation="0dp"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:theme="@style/Toolbar.Light"
+    app:titleTextAppearance="@style/Toolbar.Title"
+    app:titleTextColor="@color/colorTextAction">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewlogo"
+            android:layout_width="88dp"
+            android:layout_height="44dp"
+            android:src="@drawable/logow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/coins_layout"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rectanglebg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/spinwheelclick"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rotationY="-186"
+                    android:text="$"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/coins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="****"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/spinwheelclick"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/spinpng"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.appcompat.widget.Toolbar>
+

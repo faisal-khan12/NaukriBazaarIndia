@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+
+    tools:context=".Activities.DisclaimerActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBackground"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/Toolbar.Light"
+        app:titleTextAppearance="@style/Toolbar.Title"
+        app:titleTextColor="@color/colorTextAction" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_middle"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Disclaimer: Mazi नोकरी, App"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/overlay_dark_90"
+        app:fontFamily="sans-serif-medium" />
+
+    <TextView
+
+        android:layout_margin="10dp"
+        android:id="@+id/failed_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:supportsRtl="false"
+        android:text="@string/disclaimer"
+        android:textSize="18dp"
+        android:textColor="@color/grey_40"
+        app:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+    </ScrollView>>
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "112383506567",
+    "firebase_url": "https://indian-nokri-bazaar-default-rtdb.firebaseio.com",
+    "project_id": "indian-nokri-bazaar",
+    "storage_bucket": "indian-nokri-bazaar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112383506567:android:106b746704ff5dd2296022",
+        "android_client_info": {
+          "package_name": "com.appstacks.indiannaukribazaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112383506567-4o5ajl18tgm8jam1v0hu364an2s62ilm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appstacks.indiannaukribazaar",
+            "certificate_hash": "6b3964d24e4a5b66e4d08be11859682743752dfe"
+          }
+        },
+        {
+          "client_id": "112383506567-frjsb371137ehqtpq47immn2im2qlt68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByiy530ZaX8zjHOC-uH1Z-iU2zyRNRRF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112383506567-frjsb371137ehqtpq47immn2im2qlt68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
