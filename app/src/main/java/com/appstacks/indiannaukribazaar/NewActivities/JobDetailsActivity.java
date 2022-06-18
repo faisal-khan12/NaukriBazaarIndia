@@ -1,21 +1,30 @@
 package com.appstacks.indiannaukribazaar.NewActivities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.appstacks.indiannaukribazaar.FirebaseModels.JobModel;
+import com.appstacks.indiannaukribazaar.NewActivities.Models.UserDataModel;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.databinding.ActivityJobDetailsBinding;
+import com.appstacks.indiannaukribazaar.model.User;
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class JobDetailsActivity extends AppCompatActivity {
     ActivityJobDetailsBinding binding;
 
     String jobImg;
-    String jobTitle, companyName, jobType,uniqueKey, jobTime, jobPostDate;
+    String jobTitle, companyName, jobType,uniqueKey, jobTime, jobPostDate,jobPostedTime;
     String applyBefore, jobPriceINR, jobDescription, rolesAndRESPONSIBILITIES,salaryRange,jobLocation;
     String key;
+    DatabaseReference timeRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +42,11 @@ public class JobDetailsActivity extends AppCompatActivity {
         applyBefore = getIntent().getStringExtra("applybefore");
         jobPriceINR = getIntent().getStringExtra("price");
         jobDescription = getIntent().getStringExtra("jobdes");
-        rolesAndRESPONSIBILITIES = getIntent().getStringExtra("roleandres");
+        rolesAndRESPONSIBILITIES = getIntent().getStringExtra("getRules");
         jobImg = getIntent().getStringExtra("imageurl");
         jobLocation = getIntent().getStringExtra("location");
+        jobPostedTime = getIntent().getStringExtra("jobPostedTime");
+        jobPostDate = getIntent().getStringExtra("jobPostDate");
 
 
         binding.jobtitle.setText(jobTitle);
@@ -45,6 +56,10 @@ public class JobDetailsActivity extends AppCompatActivity {
         binding.salaryRange.setText(salaryRange);
         binding.applybefore.setText(applyBefore);
         binding.jobPriceINR.setText(jobPriceINR);
+        binding.rolesAndResp.setText(rolesAndRESPONSIBILITIES);
+        binding.jobPostedDate.setText(jobPostDate);
+
+
 
 
         try {

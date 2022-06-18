@@ -44,7 +44,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.viewHolder> {
         holder.binding.companyname.setText(model.getCompanyName());
         holder.binding.jobtitle.setText(model.getJobTitle());
         holder.binding.jobType.setText(model.getJobType());
-        holder.binding.jobSalary.setText(model.getSalaryRange());
+        holder.binding.salary.setText(model.getSalaryRange());
 
         try {
             Glide.with(context).load(model.getJobImg()).placeholder(R.drawable.avatar_placeholder).into(holder.binding.imgView);
@@ -62,7 +62,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.viewHolder> {
                 intent.putExtra("companyname",model.getCompanyName());
                 intent.putExtra("type",model.getJobType());
                 intent.putExtra("time",model.getJobTime());
-
+                intent.putExtra("jobPostDate",   model.getJobPostDate());
                 intent.putExtra("salary",model.getSalaryRange());
                 intent.putExtra("applybefore",model.getApplyBefore());
                 intent.putExtra("price",model.getJobPriceINR());
@@ -70,6 +70,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.viewHolder> {
                 intent.putExtra("roleandres",model.getRolesAndRESPONSIBILITIES());
                 intent.putExtra("imageurl",model.getJobImg());
                 intent.putExtra("location",model.getJobLocation());
+                intent.putExtra("getRules", model.getRolesAndRESPONSIBILITIES());
                 context.startActivity(intent);
 
 
