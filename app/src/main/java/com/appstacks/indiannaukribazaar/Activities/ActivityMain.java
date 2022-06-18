@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.appstacks.indiannaukribazaar.NewActivities.SpinWheelActivity;
+import com.appstacks.indiannaukribazaar.NewFragments.FindJobsFragments;
 import com.appstacks.indiannaukribazaar.NewFragments.JobFragment;
 import com.appstacks.indiannaukribazaar.NewFragments.ProfileFragment;
 import com.appstacks.indiannaukribazaar.R;
@@ -155,12 +156,15 @@ public class ActivityMain extends AppCompatActivity {
                 case R.id.homeMain:
                     loadFragment(new FragmentHome());
                     break;
-                case R.id.findJobs:
-                    loadFragment(new JobFragment());
-                    break;
+//                case R.id.findJobs:
+//                    loadFragment(new JobFragment());
+//                    break;
                 case R.id.profile:
                     loadFragment(new ProfileFragment());
                     break;
+
+                case R.id.paidJobs:
+                    loadFragment(new FindJobsFragments());
 
             }
             return true;

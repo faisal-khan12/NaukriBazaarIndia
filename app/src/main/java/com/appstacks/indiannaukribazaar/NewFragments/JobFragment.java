@@ -46,9 +46,7 @@ public class JobFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-
-
-        binding = FragmentJobBinding.inflate(inflater,container,false);
+        binding = FragmentJobBinding.inflate(inflater, container, false);
 
         jobRef = FirebaseDatabase.getInstance().getReference("AdminPanel").child("job");
 
@@ -57,10 +55,14 @@ public class JobFragment extends Fragment {
         jobRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     for (DataSnapshot s : snapshot.getChildren()) {
+                        int size = (int) snapshot.getChildrenCount();
+
                         JobModel data = s.getValue(JobModel.class);
+                        binding.jobsFound.setText(Integer.toString(size)+ " Jobs Found");
                         binding.loadingid.setVisibility(View.GONE);
+                        binding.jobsFound.setVisibility(View.VISIBLE);
                         jobList.add(data);
                         jobAdapter = new JobAdapter(jobList, getContext());
 
@@ -73,6 +75,7 @@ public class JobFragment extends Fragment {
                     }
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -99,28 +102,21 @@ public class JobFragment extends Fragment {
 //            }
 
 
-
-
-
-
-
         return binding.getRoot();
     }
-
 
 
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
     }
+
     @Override
     public void onStop() {
         super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
     }
-
-
 
 
 }
