@@ -2,13 +2,12 @@ package com.appstacks.indiannaukribazaar.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.appstacks.indiannaukribazaar.NewActivities.KycPaidJobs.KycStartBrowsingActivity;
 import com.appstacks.indiannaukribazaar.NewActivities.SpinWheelActivity;
-import com.appstacks.indiannaukribazaar.NewFragments.FindJobsFragments;
-import com.appstacks.indiannaukribazaar.NewFragments.JobFragment;
+
 import com.appstacks.indiannaukribazaar.NewFragments.ProfileFragment;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.Slider.SliderAdapter;
@@ -31,10 +30,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -164,7 +161,7 @@ public class ActivityMain extends AppCompatActivity {
                     break;
 
                 case R.id.paidJobs:
-                    loadFragment(new FindJobsFragments());
+                   startActivity(new Intent(ActivityMain.this, KycStartBrowsingActivity.class));
 
             }
             return true;

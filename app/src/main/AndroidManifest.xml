@@ -22,6 +22,27 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".NewActivities.KycPaidJobs.ScanBackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.ScanFrontActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.DocumentVerifactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.PersonalInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.StartProfileVerification"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.StartProfileVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivities.KycPaidJobs.KycStartBrowsingActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewActivities.JobDetailsActivity"
             android:exported="false" />
         <activity
@@ -60,6 +81,11 @@
         <activity
             android:name=".Activities.ActivitySplash"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ActivityMain"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -68,10 +94,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activities.ActivityMain"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ActivityRegisterProfile"
             android:windowSoftInputMode="adjustResize" />
