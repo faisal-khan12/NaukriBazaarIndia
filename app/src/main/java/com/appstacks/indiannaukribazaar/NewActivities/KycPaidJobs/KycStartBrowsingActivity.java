@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.appstacks.indiannaukribazaar.Activities.ActivityMain;
 import com.appstacks.indiannaukribazaar.R;
 
 public class KycStartBrowsingActivity extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class KycStartBrowsingActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
+
+
 
                 startActivity(new Intent(KycStartBrowsingActivity.this,StartProfileVerification.class));
 

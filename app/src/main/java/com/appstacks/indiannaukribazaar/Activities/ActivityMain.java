@@ -161,7 +161,13 @@ public class ActivityMain extends AppCompatActivity {
                     break;
 
                 case R.id.paidJobs:
-                   startActivity(new Intent(ActivityMain.this, KycStartBrowsingActivity.class));
+
+                    Intent intent = new Intent(ActivityMain.this,KycStartBrowsingActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+
+//                   startActivity(new Intent(ActivityMain.this, KycStartBrowsingActivity.class));
+
 
             }
             return true;
