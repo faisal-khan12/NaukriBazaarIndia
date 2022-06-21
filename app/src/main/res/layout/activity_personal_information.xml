@@ -7,7 +7,6 @@
     android:background="@color/green"
     tools:context=".NewActivities.KycPaidJobs.PersonalInformationActivity">
 
-
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
@@ -56,155 +55,156 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar1">
 
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstnamelayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="First name"
-            android:textSize="16sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:hint="First Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/etfirstName"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstnameBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastnnameLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Last Name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView22"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstnamelayout">
 
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lastnamebox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addresslayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="Last name"
-            android:textSize="16sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Address"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/etfirstName"
-            app:layout_constraintTop_toBottomOf="@+id/etfirstName" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastnnameLayout">
 
-        <EditText
-            android:id="@+id/etlastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/etfirstName"
-            app:layout_constraintStart_toStartOf="@+id/textView23"
-            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addressBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/citylayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="Address"
-            android:textSize="16sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="City"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/etlastName"
-            app:layout_constraintTop_toBottomOf="@+id/etlastName" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addresslayout">
 
-        <EditText
-            android:id="@+id/etuserAddress"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cityBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ziplayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/etlastName"
-            app:layout_constraintStart_toStartOf="@+id/textView26"
-            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Zip/Area Code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/citylayout">
 
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/zipbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gstlayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="City"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/etuserAddress"
-            app:layout_constraintStart_toStartOf="@+id/etuserAddress"
-            app:layout_constraintTop_toBottomOf="@+id/etuserAddress" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleDrawable="@drawable/ic_visibility"
+            app:passwordToggleTint="@color/green"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="GST IN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ziplayout">
 
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/textView28"
-            app:layout_constraintStart_toStartOf="@+id/textView28"
-            app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="Zip/Area Code"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/etCity"
-            app:layout_constraintStart_toStartOf="@+id/etCity"
-            app:layout_constraintTop_toBottomOf="@+id/etCity" />
-
-        <EditText
-            android:id="@+id/etZipCode"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@+id/textView31"
-            app:layout_constraintStart_toStartOf="@+id/textView31"
-            app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/catamaran_semibold"
-            android:text="GST IN"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/etZipCode"
-            app:layout_constraintStart_toStartOf="@+id/etZipCode"
-            app:layout_constraintTop_toBottomOf="@+id/etZipCode" />
-
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gstBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:id="@+id/etGst"
-            android:layout_width="0dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textCapCharacters"
             android:textAllCaps="true"
-            app:layout_constraintEnd_toEndOf="@+id/textView32"
-            app:layout_constraintStart_toStartOf="@+id/textView32"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="486dp" />
 
         <ImageView
             android:id="@+id/show_pass_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:onClick="ShowHidePass"
             android:padding="2dp"
-            app:layout_constraintBottom_toBottomOf="@+id/etGst"
-            app:layout_constraintEnd_toEndOf="@+id/etGst"
-            app:layout_constraintTop_toBottomOf="@+id/textView32"
-            app:srcCompat="@drawable/ic_visibility" />
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_visibility"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="490dp" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/catamaran_semibold"
+            android:text="GST IN"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="464dp" />
 
         <Button
             android:id="@+id/nextStepBtn"
@@ -213,13 +213,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/green"
             android:background="@drawable/ic_btn_bg"
+            android:backgroundTint="@color/green"
             android:fontFamily="@font/poppins"
             android:padding="15dp"
-            android:textColor="@color/white"
             android:text="Next Step"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"

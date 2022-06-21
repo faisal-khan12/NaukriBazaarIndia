@@ -65,12 +65,12 @@ public class PersonalInformationActivity extends AppCompatActivity {
         progressDialog.show();
 
 
-        firstName = binding.etfirstName.getText().toString();
-        lastName = binding.etlastName.getText().toString();
-        userAddress = binding.etuserAddress.getText().toString();
-        city = binding.etCity.getText().toString();
-        zipCode = binding.etZipCode.getText().toString();
-        gst = binding.etGst.getText().toString();
+        firstName = binding.firstnameBox.getText().toString();
+        lastName = binding.lastnamebox.getText().toString();
+        userAddress = binding.addressBox.getText().toString();
+        city = binding.cityBox.getText().toString();
+        zipCode = binding.zipbox.getText().toString();
+        gst = binding.gstBox.getText().toString();
         uniqueKey = UUID.randomUUID().toString();
 
 
@@ -107,12 +107,12 @@ public class PersonalInformationActivity extends AppCompatActivity {
 
     private void emptyBoxes() {
 
-        binding.etfirstName.setText("");
-        binding.etlastName.setText("");
-        binding.etuserAddress.setText("");
-        binding.etCity.setText("");
-        binding.etZipCode.setText("");
-        binding.etGst.setText("");
+        binding.firstnameBox.setText("");
+        binding.lastnamebox.setText("");
+        binding.addressBox.setText("");
+        binding.cityBox.setText("");
+        binding.zipbox.setText("");
+        binding.gstBox.setText("");
 
 
     }
@@ -120,18 +120,18 @@ public class PersonalInformationActivity extends AppCompatActivity {
     private void validation() {
 
 
-        if (binding.etfirstName.getText().toString().isEmpty()) {
-            binding.etfirstName.setError("Please Type your first name");
-        } else if (binding.etlastName.getText().toString().isEmpty()) {
-            binding.etlastName.setError("Please Type your last name");
-        } else if (binding.etuserAddress.getText().toString().isEmpty()) {
-            binding.etuserAddress.setError("Please Type your Address");
-        } else if (binding.etCity.getText().toString().isEmpty()) {
-            binding.etCity.setError("Please Type your City");
-        } else if (binding.etZipCode.getText().toString().isEmpty()) {
-            binding.etZipCode.setError("Please Type Country Zip Code");
-        } else if (binding.etGst.getText().toString().isEmpty()) {
-            binding.etGst.setError("Please Type GST");
+        if (binding.firstnameBox.getText().toString().isEmpty()) {
+            binding.firstnameBox.setError("Please Type your first name");
+        } else if (binding.lastnamebox.getText().toString().isEmpty()) {
+            binding.lastnamebox.setError("Please Type your last name");
+        } else if (binding.addressBox.getText().toString().isEmpty()) {
+            binding.addressBox.setError("Please Type your Address");
+        } else if (binding.cityBox.getText().toString().isEmpty()) {
+            binding.cityBox.setError("Please Type your City");
+        } else if (binding.zipbox.getText().toString().isEmpty()) {
+            binding.zipbox.setError("Please Type Country Zip Code");
+        } else if (binding.gstBox.getText().toString().isEmpty()) {
+            binding.gstBox.setError("Please Type GST");
         } else {
             uploadData();
         }
