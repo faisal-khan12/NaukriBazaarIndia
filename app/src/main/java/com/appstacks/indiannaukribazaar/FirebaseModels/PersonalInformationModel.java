@@ -1,14 +1,45 @@
 package com.appstacks.indiannaukribazaar.FirebaseModels;
 
 public class PersonalInformationModel {
-    String firstName, lastName, userAddress, city, zipCode, gst, uniqueKey;
+    String firstName, lastName, userAddress, city, zipCode, gst, uniqueKey,userId;
+
+    String frontImage,backImage,selectedDoc;
 
 
     public PersonalInformationModel() {
 
     }
+  public  PersonalInformationModel(String frontImage,String backImage,String selectedDoc){
+        this.backImage=backImage;
+        this.frontImage=frontImage;
+        this.selectedDoc=selectedDoc;
+  }
 
-    public PersonalInformationModel(String firstName, String lastName, String userAddress, String city, String zipCode, String gst, String uniqueKey) {
+    public String getSelectedDoc() {
+        return selectedDoc;
+    }
+
+    public void setSelectedDoc(String selectedDoc) {
+        this.selectedDoc = selectedDoc;
+    }
+
+    public String getFrontImage() {
+        return frontImage;
+    }
+
+    public void setFrontImage(String frontImage) {
+        this.frontImage = frontImage;
+    }
+
+    public String getBackImage() {
+        return backImage;
+    }
+
+    public void setBackImage(String backImage) {
+        this.backImage = backImage;
+    }
+
+    public PersonalInformationModel(String firstName, String lastName, String userAddress, String city, String zipCode, String gst, String uniqueKey, String userId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userAddress = userAddress;
@@ -16,7 +47,16 @@ public class PersonalInformationModel {
         this.zipCode = zipCode;
         this.gst = gst;
         this.uniqueKey = uniqueKey;
+        this.userId = userId;
     }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
 
     public String getFirstName() {
         return firstName;

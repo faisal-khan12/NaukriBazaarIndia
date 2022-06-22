@@ -11,20 +11,25 @@ import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.databinding.ActivityDocumentVerifactionBinding;
 
 public class DocumentVerifactionActivity extends AppCompatActivity {
-    
+
     ActivityDocumentVerifactionBinding binding;
 
+    String selected = null;
+Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDocumentVerifactionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        
-        
+
+
         binding.nationalIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DocumentVerifactionActivity.this,ScanFrontActivity.class));
+                selected = "NationalIdImage";
+                 intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
+                intent.putExtra("selectedDoc", selected);
+                startActivity(intent);
             }
         });
 
@@ -32,14 +37,20 @@ public class DocumentVerifactionActivity extends AppCompatActivity {
         binding.passportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DocumentVerifactionActivity.this,ScanFrontActivity.class));
+                selected = "PassportImage";
+                intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
+                intent.putExtra("selectedDoc", selected);
+                startActivity(intent);
             }
         });
 
         binding.driverLicenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DocumentVerifactionActivity.this,ScanFrontActivity.class));
+                selected = "Driver'sLicenceImage";
+                intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
+                intent.putExtra("selectedDoc", selected);
+                startActivity(intent);
             }
         });
     }

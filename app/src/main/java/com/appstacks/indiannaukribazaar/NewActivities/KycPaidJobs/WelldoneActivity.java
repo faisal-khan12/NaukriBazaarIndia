@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.appstacks.indiannaukribazaar.NewFragments.FindJobsFragments;
 import com.appstacks.indiannaukribazaar.R;
 
 public class WelldoneActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class WelldoneActivity extends AppCompatActivity {
         goBackBTn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WelldoneActivity.this,DocumentVerifactionActivity.class));
+                startActivity(new Intent(WelldoneActivity.this, FindJobsFragments.class));
             }
         });
     }

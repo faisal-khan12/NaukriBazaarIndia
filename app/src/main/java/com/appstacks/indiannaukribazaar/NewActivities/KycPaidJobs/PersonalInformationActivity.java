@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -33,6 +34,8 @@ public class PersonalInformationActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
 
+    String user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class PersonalInformationActivity extends AppCompatActivity {
 
         binding = ActivityPersonalInformationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        if (FirebaseAuth.getInstance().getCurrentUser() != null)
+            user = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         progressDialog = new ProgressDialog(this);
 
@@ -63,8 +68,6 @@ public class PersonalInformationActivity extends AppCompatActivity {
         progressDialog.setMessage("Please Wait. . . .");
         progressDialog.setCancelable(true);
         progressDialog.show();
-
-
         firstName = binding.firstnameBox.getText().toString();
         lastName = binding.lastnamebox.getText().toString();
         userAddress = binding.addressBox.getText().toString();
@@ -74,9 +77,9 @@ public class PersonalInformationActivity extends AppCompatActivity {
         uniqueKey = UUID.randomUUID().toString();
 
 
-        PersonalInformationModel model = new PersonalInformationModel(firstName, lastName, userAddress, city, zipCode, gst, uniqueKey);
+        PersonalInformationModel model = new PersonalInformationModel(firstName, lastName, userAddress, city, zipCode, gst, uniqueKey, user);
 
-        databaseReference.child(uniqueKey).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
+        databaseReference.child(user).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isComplete()) {
