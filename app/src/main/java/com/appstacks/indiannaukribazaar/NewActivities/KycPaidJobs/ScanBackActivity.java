@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.appstacks.indiannaukribazaar.FirebaseModels.PersonalInformationModel;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.databinding.ActivityScanBackBinding;
+import com.appstacks.indiannaukribazaar.databinding.HandloadingDialogLayoutBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -43,6 +45,7 @@ public class ScanBackActivity extends AppCompatActivity {
     StorageReference storageReference;
     DatabaseReference reference;
     ProgressDialog progressDialog;
+    AlertDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,9 +97,10 @@ public class ScanBackActivity extends AppCompatActivity {
         binding.nextStebtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressDialog.setMessage("Please Wait . . . .");
+                progressDialog.setMessage("Loading. . .");
                 progressDialog.setCancelable(false);
-                progressDialog.show();
+                loadingAlertDialog();
+                loadingDialog.show();
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 photo.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                 byte[] finalImage = baos.toByteArray();
@@ -145,10 +149,10 @@ public class ScanBackActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void unused) {
 
-                            progressDialog.dismiss();
+                            loadingDialog.dismiss();
 
 
-                            Toast.makeText(ScanBackActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ScanBackActivity.this, "Submitted Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ScanBackActivity.this, WelldoneActivity.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -195,5 +199,18 @@ public class ScanBackActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void loadingAlertDialog(){
+
+        HandloadingDialogLayoutBinding handloadingBinding = HandloadingDialogLayoutBinding.inflate(getLayoutInflater());
+        loadingDialog = new AlertDialog.Builder(ScanBackActivity.this)
+                .setView(handloadingBinding.getRoot()).create();
+        loadingDialog.setCanceledOnTouchOutside(false);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+    }
+
 
 }

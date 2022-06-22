@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,8 +18,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.appstacks.indiannaukribazaar.NewActivities.OTPActivity;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.databinding.ActivityScanFrontBinding;
+import com.appstacks.indiannaukribazaar.databinding.HandloadingDialogLayoutBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +42,7 @@ public class ScanFrontActivity extends AppCompatActivity {
     public Bitmap selectedImage;
     String downloadUrl;
     ProgressDialog progressDialog;
+    AlertDialog loadingDialog;
 
 
     String user;
@@ -89,9 +93,11 @@ public class ScanFrontActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                progressDialog.setMessage("Please Wait . . . .");
+                progressDialog.setMessage("Loading...");
                 progressDialog.setCancelable(false);
-                progressDialog.show();
+                loadingAlertDialog();
+
+                loadingDialog.show();
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 selectedImage.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                 byte[] finalImage = baos.toByteArray();
@@ -110,7 +116,7 @@ public class ScanFrontActivity extends AppCompatActivity {
                                     path.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                         @Override
                                         public void onSuccess(Uri uri) {
-                                            progressDialog.dismiss();
+                                            loadingDialog.dismiss();
 
 
                                             downloadUrl = String.valueOf(uri);
@@ -166,6 +172,18 @@ public class ScanFrontActivity extends AppCompatActivity {
             binding.nextStepbtn1.setVisibility(View.VISIBLE);
 
         }
+    }
+
+
+    public void loadingAlertDialog(){
+
+        HandloadingDialogLayoutBinding handloadingBinding = HandloadingDialogLayoutBinding.inflate(getLayoutInflater());
+        loadingDialog = new AlertDialog.Builder(ScanFrontActivity.this)
+                .setView(handloadingBinding.getRoot()).create();
+        loadingDialog.setCanceledOnTouchOutside(false);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
     }
 
 
