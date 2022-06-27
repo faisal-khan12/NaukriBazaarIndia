@@ -26,7 +26,7 @@ Intent intent;
         binding.nationalIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selected = "NationalIdImage";
+                selected = "National ID";
                  intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
                 intent.putExtra("selectedDoc", selected);
                 startActivity(intent);
@@ -37,7 +37,7 @@ Intent intent;
         binding.passportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selected = "PassportImage";
+                selected = "Passport";
                 intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
                 intent.putExtra("selectedDoc", selected);
                 startActivity(intent);
@@ -47,7 +47,7 @@ Intent intent;
         binding.driverLicenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selected = "Driver'sLicenceImage";
+                selected = "Driver's LicenceImage";
                 intent = new Intent(DocumentVerifactionActivity.this, ScanFrontActivity.class);
                 intent.putExtra("selectedDoc", selected);
                 startActivity(intent);

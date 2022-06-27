@@ -28,25 +28,9 @@ public class KycStartBrowsingActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
-
-
-
-                startActivity(new Intent(KycStartBrowsingActivity.this,StartProfileVerification.class));
-
-
-
-
-
-
-
-
-
+                startActivity(new Intent(
+                        KycStartBrowsingActivity.this,StartProfileVerification.class));
             }
         });
     }
-
-
-
-
-
 }

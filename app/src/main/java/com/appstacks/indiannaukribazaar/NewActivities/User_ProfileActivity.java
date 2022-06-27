@@ -89,7 +89,7 @@ public class User_ProfileActivity extends AppCompatActivity {
                             binding.emailBox.getText().toString(),
                             binding.nameBox.getText().toString(),
                             binding.genderBox.getText().toString(),
-                            binding.maskedDobTv.getText().toString()
+                            binding.maskedDobTv.getText().toString(),false
                     );
                     userRef.child(uID).setValue(dataModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

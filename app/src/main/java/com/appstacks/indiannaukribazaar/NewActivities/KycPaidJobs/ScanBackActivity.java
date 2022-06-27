@@ -43,7 +43,7 @@ public class ScanBackActivity extends AppCompatActivity {
     Bitmap photo;
     String user;
     StorageReference storageReference;
-    DatabaseReference reference;
+    DatabaseReference reference,userRef;
     ProgressDialog progressDialog;
     AlertDialog loadingDialog;
 
@@ -61,7 +61,9 @@ public class ScanBackActivity extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             user = FirebaseAuth.getInstance().getCurrentUser().getUid();
         }
-        reference = FirebaseDatabase.getInstance().getReference("UsersInfo").child(user).child(selectedDoc);
+        reference = FirebaseDatabase.getInstance().getReference("UsersInfo").child(user);
+        userRef = FirebaseDatabase.getInstance().getReference("AllUsers").child(user);
+
         storageReference = FirebaseStorage.getInstance()
                 .getReference("UserInfo")
                 .child(user).child(selectedDoc);
@@ -119,8 +121,8 @@ public class ScanBackActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             backImage = String.valueOf(uri);
-                                            uploadData(selectedDoc, frontImage, backImage);
 
+                                            uploadData(frontImage,backImage);
                                         }
                                     });
                                 }
@@ -136,22 +138,19 @@ public class ScanBackActivity extends AppCompatActivity {
 
     }
 
-    private void uploadData(String selectedDoc, String frontImage, String backImage) {
+    private void uploadData(String frontImage, String backImage) {
 
-
-        PersonalInformationModel data = new PersonalInformationModel(frontImage, backImage, selectedDoc);
-
-        reference.setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+        reference.child("frontImage").setValue(frontImage);
+        reference.child("backImage").setValue(backImage)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isComplete()) {
                     task.addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-
+                            userRef.child("verification").setValue(true);
                             loadingDialog.dismiss();
-
-
                             Toast.makeText(ScanBackActivity.this, "Submitted Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ScanBackActivity.this, WelldoneActivity.class));
                         }

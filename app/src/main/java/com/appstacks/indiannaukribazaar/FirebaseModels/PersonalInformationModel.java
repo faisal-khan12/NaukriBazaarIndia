@@ -1,45 +1,16 @@
 package com.appstacks.indiannaukribazaar.FirebaseModels;
 
 public class PersonalInformationModel {
-    String firstName, lastName, userAddress, city, zipCode, gst, uniqueKey,userId;
+    String firstName, lastName, userAddress, city, zipCode, gst, uniqueKey,userId,select;
 
-    String frontImage,backImage,selectedDoc;
+    String frontImage,backImage;
 
 
     public PersonalInformationModel() {
 
     }
-  public  PersonalInformationModel(String frontImage,String backImage,String selectedDoc){
-        this.backImage=backImage;
-        this.frontImage=frontImage;
-        this.selectedDoc=selectedDoc;
-  }
 
-    public String getSelectedDoc() {
-        return selectedDoc;
-    }
-
-    public void setSelectedDoc(String selectedDoc) {
-        this.selectedDoc = selectedDoc;
-    }
-
-    public String getFrontImage() {
-        return frontImage;
-    }
-
-    public void setFrontImage(String frontImage) {
-        this.frontImage = frontImage;
-    }
-
-    public String getBackImage() {
-        return backImage;
-    }
-
-    public void setBackImage(String backImage) {
-        this.backImage = backImage;
-    }
-
-    public PersonalInformationModel(String firstName, String lastName, String userAddress, String city, String zipCode, String gst, String uniqueKey, String userId) {
+    public PersonalInformationModel(String firstName, String lastName, String userAddress, String city, String zipCode, String gst, String uniqueKey, String userId, String select, String frontImage, String backImage) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userAddress = userAddress;
@@ -48,15 +19,10 @@ public class PersonalInformationModel {
         this.gst = gst;
         this.uniqueKey = uniqueKey;
         this.userId = userId;
+        this.select = select;
+        this.frontImage = frontImage;
+        this.backImage = backImage;
     }
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
 
     public String getFirstName() {
         return firstName;
@@ -112,5 +78,37 @@ public class PersonalInformationModel {
 
     public void setUniqueKey(String uniqueKey) {
         this.uniqueKey = uniqueKey;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getSelect() {
+        return select;
+    }
+
+    public void setSelect(String select) {
+        this.select = select;
+    }
+
+    public String getFrontImage() {
+        return frontImage;
+    }
+
+    public void setFrontImage(String frontImage) {
+        this.frontImage = frontImage;
+    }
+
+    public String getBackImage() {
+        return backImage;
+    }
+
+    public void setBackImage(String backImage) {
+        this.backImage = backImage;
     }
 }

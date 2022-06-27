@@ -77,7 +77,9 @@ public class PersonalInformationActivity extends AppCompatActivity {
         uniqueKey = UUID.randomUUID().toString();
 
 
-        PersonalInformationModel model = new PersonalInformationModel(firstName, lastName, userAddress, city, zipCode, gst, uniqueKey, user);
+        PersonalInformationModel model = new PersonalInformationModel(
+                firstName, lastName, userAddress, city, zipCode, gst, uniqueKey,
+                user,"","","");
 
         databaseReference.child(user).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

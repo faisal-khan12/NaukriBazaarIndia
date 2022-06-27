@@ -4,12 +4,14 @@ public class UserDataModel {
 
     String uuID,mobileNumber,userName,emailAddress,fullName,gender,dateOfBirth;
 
+    boolean verification;
+
 
     public UserDataModel() {
     }
 
 
-    public UserDataModel(String uuID, String mobileNumber, String userName, String emailAddress, String fullName, String gender, String dateOfBirth) {
+    public UserDataModel(String uuID, String mobileNumber, String userName, String emailAddress, String fullName, String gender, String dateOfBirth, boolean verification) {
         this.uuID = uuID;
         this.mobileNumber = mobileNumber;
         this.userName = userName;
@@ -17,6 +19,7 @@ public class UserDataModel {
         this.fullName = fullName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
+        this.verification = verification;
     }
 
     public String getUuID() {
@@ -73,5 +76,13 @@ public class UserDataModel {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public boolean isVerification() {
+        return verification;
+    }
+
+    public void setVerification(boolean verification) {
+        this.verification = verification;
     }
 }

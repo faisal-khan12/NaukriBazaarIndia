@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.appstacks.indiannaukribazaar.NewActivities.KycPaidJobs.KycStartBrowsingActivity;
 import com.appstacks.indiannaukribazaar.NewActivities.SpinWheelActivity;
 
+import com.appstacks.indiannaukribazaar.NewFragments.FindJobsFragments;
 import com.appstacks.indiannaukribazaar.NewFragments.ProfileFragment;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.Slider.SliderAdapter;
@@ -54,6 +55,12 @@ import com.appstacks.indiannaukribazaar.utils.Tools;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -67,6 +74,9 @@ import java.util.List;
 public class ActivityMain extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    private DatabaseReference allUserRef;
+    private FirebaseAuth auth;
 
     private ActionBar actionBar;
     private Toolbar toolbar;
@@ -93,6 +103,8 @@ public class ActivityMain extends AppCompatActivity {
     private SliderView sliderView;
     private PageIndicatorView pageindi;
 
+    String currentUserAuth;
+
     LinearLayout searchBox;
 
     @Override
@@ -104,6 +116,10 @@ public class ActivityMain extends AppCompatActivity {
         if (getIntent().getExtras() != null && getIntent().getExtras().getBoolean("EXIT", false)) {
             finish();
         }
+        auth = FirebaseAuth.getInstance();
+        currentUserAuth = auth.getCurrentUser().getUid();
+        allUserRef = FirebaseDatabase.getInstance().getReference("AllUsers").child(currentUserAuth);
+
 //        bottomNav = findViewById(R.id.bottomNav);
 
         // creating a new array list fr our array list.
@@ -161,10 +177,32 @@ public class ActivityMain extends AppCompatActivity {
                     break;
 
                 case R.id.paidJobs:
+                    allUserRef.child("verification").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                boolean istrue = snapshot.getValue(Boolean.class);
+                                if (istrue) {
+                                    loadFragment(new FindJobsFragments());
 
-                    Intent intent = new Intent(ActivityMain.this,KycStartBrowsingActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
+                                } else {
+                                    Intent intent = new Intent(ActivityMain.this, KycStartBrowsingActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                    startActivity(intent);
+                                }
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+//                    Intent intent = new Intent(ActivityMain.this,KycStartBrowsingActivity.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                    startActivity(intent);
 
 //                   startActivity(new Intent(ActivityMain.this, KycStartBrowsingActivity.class));
 
@@ -185,7 +223,7 @@ public class ActivityMain extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ImageView im = findViewById(R.id.imageViewlogo);
         im.setOnClickListener(view -> {
-            Toast.makeText(getApplicationContext(), "ffffff", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), currentUserAuth, Toast.LENGTH_SHORT).show();
         });
 
         //Search for mainActivity
@@ -632,4 +670,9 @@ public class ActivityMain extends AppCompatActivity {
             }
         });
     }
+
+    public void toastString(String text) {
+        Toast.makeText(ActivityMain.this, text, Toast.LENGTH_SHORT).show();
+    }
+
 }

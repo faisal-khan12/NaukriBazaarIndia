@@ -27,6 +27,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -43,6 +45,7 @@ public class ScanFrontActivity extends AppCompatActivity {
     String downloadUrl;
     ProgressDialog progressDialog;
     AlertDialog loadingDialog;
+    DatabaseReference reference;
 
 
     String user;
@@ -56,11 +59,18 @@ public class ScanFrontActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityScanFrontBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
         progressDialog = new ProgressDialog(this);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             user = FirebaseAuth.getInstance().getCurrentUser().getUid();
         }
+
         selectedDocument = getIntent().getStringExtra("selectedDoc");
+        reference = FirebaseDatabase.getInstance().getReference("UsersInfo");
+
+        reference.child(user).child("select").setValue(selectedDocument);
+
 
 
         storageReference = FirebaseStorage.getInstance().getReference("UserInfo").child(user).child(selectedDocument);
@@ -117,8 +127,6 @@ public class ScanFrontActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             loadingDialog.dismiss();
-
-
                                             downloadUrl = String.valueOf(uri);
                                             Log.d("ScanActivity", "Success");
                                             Intent intent = new Intent(ScanFrontActivity.this, ScanBackActivity.class);
