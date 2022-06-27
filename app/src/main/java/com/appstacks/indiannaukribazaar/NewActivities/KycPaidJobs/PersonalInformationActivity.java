@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.appstacks.indiannaukribazaar.Activities.ActivityMain;
 import com.appstacks.indiannaukribazaar.FirebaseModels.PersonalInformationModel;
 import com.appstacks.indiannaukribazaar.R;
 import com.appstacks.indiannaukribazaar.databinding.ActivityPersonalInformationBinding;
@@ -146,18 +147,23 @@ public class PersonalInformationActivity extends AppCompatActivity {
     public void ShowHidePass(View view) {
 
         if (view.getId() == R.id.show_pass_btn) {
-            if (binding.etGst.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+            if (binding.gstBox.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
                 ((ImageView) (view)).setImageResource(R.drawable.ic_visibility);
                 //Show Password
-                binding.etGst.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                binding.gstBox.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
             } else {
                 ((ImageView) (view)).setImageResource(R.drawable.ic_baseline_visibility_off);
                 //Hide Password
-                binding.etGst.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                binding.gstBox.setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
         }
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
+        startActivity(new Intent(PersonalInformationActivity.this, ActivityMain.class));
+    }
 }

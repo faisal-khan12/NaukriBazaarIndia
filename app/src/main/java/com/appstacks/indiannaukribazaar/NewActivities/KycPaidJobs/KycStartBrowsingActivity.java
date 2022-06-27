@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.appstacks.indiannaukribazaar.Activities.ActivityMain;
 import com.appstacks.indiannaukribazaar.R;
+import com.appstacks.indiannaukribazaar.fragment.FragmentHome;
 
 public class KycStartBrowsingActivity extends AppCompatActivity {
 
@@ -33,4 +34,13 @@ public class KycStartBrowsingActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(KycStartBrowsingActivity.this,ActivityMain.class));
+
+    }
+
 }

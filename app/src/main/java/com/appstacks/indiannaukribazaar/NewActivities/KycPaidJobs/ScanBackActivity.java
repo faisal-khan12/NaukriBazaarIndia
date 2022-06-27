@@ -161,6 +161,7 @@ public class ScanBackActivity extends AppCompatActivity {
                         }
                     });
                 } else {
+
                     Toast.makeText(ScanBackActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }

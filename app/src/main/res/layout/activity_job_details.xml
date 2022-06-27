@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,7 +22,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="wrap_content"
 
                 app:cardCornerRadius="6dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -35,29 +34,30 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/arrowbck"
+                        android:id="@+id/back_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="32dp"
-                        android:src="@drawable/ic_arrow_back"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/back_ic"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/black" />
 
                     <ImageView
-                        android:id="@+id/ic_job"
+                        android:id="@+id/job_ImgView"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="16dp"
                         android:src="@drawable/sample"
-                        app:layout_constraintStart_toStartOf="@+id/arrowbck"
-                        app:layout_constraintTop_toBottomOf="@+id/arrowbck" />
+                        app:layout_constraintStart_toStartOf="@+id/back_btn"
+                        app:layout_constraintTop_toBottomOf="@+id/back_btn" />
 
                     <ImageView
-                        android:id="@+id/imageView12"
+                        android:id="@+id/fav_ImgBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:src="@drawable/ic_favourite"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -72,14 +72,13 @@
                         android:text="Mid-level UX Designer "
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        app:layout_constraintStart_toStartOf="@+id/ic_job"
-                        app:layout_constraintTop_toBottomOf="@+id/ic_job" />
+                        app:layout_constraintStart_toStartOf="@+id/job_ImgView"
+                        app:layout_constraintTop_toBottomOf="@+id/job_ImgView" />
 
                     <TextView
-                        android:id="@+id/companyname"
+                        android:id="@+id/companyjob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
                         android:fontFamily="@font/poppins"
                         android:text="Toptal"
                         android:textColor="#CB181A1F"
@@ -88,24 +87,25 @@
                         app:layout_constraintTop_toBottomOf="@+id/jobtitle" />
 
                     <TextView
-                        android:id="@+id/jobPostedDate"
+                        android:id="@+id/post_TimeID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/poppins"
                         android:text="Posted on 12 july"
                         android:textColor="#CB181A1F"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/companyname"
-                        app:layout_constraintTop_toBottomOf="@+id/companyname" />
+                        app:layout_constraintStart_toStartOf="@+id/companyjob"
+                        app:layout_constraintTop_toBottomOf="@+id/companyjob" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,9 +120,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins"
                         android:text="APPLY BEFORE"
+                        android:textColor="#181A1F"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -130,11 +131,12 @@
 
                     <TextView
                         android:id="@+id/textView36"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:text="JOB PRICE"
+                        android:textColor="#181A1F"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/textView35"
@@ -143,78 +145,81 @@
                         app:layout_constraintTop_toTopOf="@+id/textView35" />
 
                     <TextView
-                        android:id="@+id/applybefore"
+                        android:id="@+id/applyBeforeID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
                         android:text="30 july,2022"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkblc"
+                        android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="@+id/textView35"
                         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
                     <TextView
-                        android:id="@+id/jobPriceINR"
-                        android:layout_width="0dp"
+                        android:id="@+id/jobPriceINrID"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
                         android:gravity="center"
                         android:text="5000 INR"
                         android:textColor="@color/darkblc"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/textView35"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/textView36"
                         app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/poppins"
                         android:text="SALARY RANGE"
+                        android:textColor="#181A1F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/applybefore"
-                        app:layout_constraintTop_toBottomOf="@+id/applybefore" />
+                        app:layout_constraintStart_toStartOf="@+id/applyBeforeID"
+                        app:layout_constraintTop_toBottomOf="@+id/applyBeforeID" />
 
                     <TextView
                         android:id="@+id/textView40"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:text="JOB LOCATION"
+                        android:textColor="#181A1F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView39"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textView39"
+                        app:layout_constraintStart_toStartOf="@+id/textView36"
                         app:layout_constraintTop_toTopOf="@+id/textView39" />
 
                     <TextView
-                        android:id="@+id/salaryRange"
+                        android:id="@+id/salaryRangeID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="16dp"
                         android:fontFamily="@font/poppins"
                         android:text="$64k - $80k/yearly"
                         android:textColor="@color/darkblc"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textView39"
                         app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
                     <TextView
-                        android:id="@+id/locationJob"
-                        android:layout_width="0dp"
+                        android:id="@+id/jobLocationID"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:text="Work from any where"
                         android:textColor="@color/darkblc"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/salaryRange"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/salaryRange"
-                        app:layout_constraintTop_toTopOf="@+id/salaryRange" />
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/salaryRangeID"
+                        app:layout_constraintStart_toStartOf="@+id/textView40"
+                        app:layout_constraintTop_toBottomOf="@+id/textView40" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -236,51 +241,47 @@
 
                     <TextView
                         android:id="@+id/textView24"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins"
                         android:text="JOB DESCRIPTION"
+                        android:textColor="#181A1F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/descriptionjob"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/jobDescriptionID"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/poppins"
-                        android:padding="10dp"
-
+                        android:text="@string/jobdesc"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textView24"
                         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
                     <TextView
                         android:id="@+id/textView27"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:fontFamily="@font/poppins"
                         android:text="see more"
                         android:textColor="@color/blue"
-                        android:visibility="invisible"
-                        app:layout_constraintStart_toStartOf="@+id/textView25"
-                        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/jobDescriptionID"
+                        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionID" />
 
                     <ImageView
                         android:id="@+id/imageView9"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:foregroundGravity="left"
-                        android:visibility="invisible"
                         app:layout_constraintBottom_toBottomOf="@+id/textView27"
                         app:layout_constraintStart_toEndOf="@+id/textView27"
                         app:layout_constraintTop_toTopOf="@+id/textView27"
@@ -302,38 +303,39 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    >
 
                     <TextView
                         android:id="@+id/textView29"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins"
                         android:text="Roles AND RESPONSIBILITIES"
+                        android:textAllCaps="true"
+                        android:textColor="#181A1F"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/rolesAndResp"
-                        android:layout_width="match_parent"
+                        android:id="@+id/rolesAndRespinsibilitiesID"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/poppins"
-                        android:padding="10dp"
-                        android:text="- Someone who has ample work experience with synthesizing primary research, developing insight-driven product strategy, and extending that strategy into artefacts in a creative, systematic and logical fashion -Adapt and meticulous with creating user guug  Can you bring creative human-centered ideas to life and make great things happen beyond what meets the eye?We believe in teamwork,fun,complex projects,diverse perspectives,and simple solutions.How about you?We\'re looking for a like-minded Can you bring creative human-centered ideas to life and make great things happen beyond what meets the eye?We believe in teamwork,fun,complex projects,diverse perspectives,and simple solutions.How about you?We\'re looking for a like-minded Can you bring creative human-centered ideas to life and make great things happen beyond what meets the eye?We believe in teamwork,fun,complex projects,diverse perspectives,and simple solutions.How about you?We\'re looking for a like-minded  "
+                        android:paddingBottom="120dp"
+                        android:text="@string/rolesandres"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textView29"
                         app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -347,20 +349,20 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/pay_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/green"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:text="Pay Now"
         android:textAllCaps="false"
-        android:textSize="24sp"
+        android:textColor="@color/white"
 
-        app:cornerRadius="10dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

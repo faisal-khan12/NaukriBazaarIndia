@@ -50,14 +50,14 @@ public class JobDetailsActivity extends AppCompatActivity {
 
 
         binding.jobtitle.setText(jobTitle);
-        binding.companyname.setText(companyName);
-        binding.locationJob.setText(jobLocation);
-        binding.descriptionjob.setText(jobDescription);
-        binding.salaryRange.setText(salaryRange);
-        binding.applybefore.setText(applyBefore);
-        binding.jobPriceINR.setText(jobPriceINR);
-        binding.rolesAndResp.setText(rolesAndRESPONSIBILITIES);
-        binding.jobPostedDate.setText(jobPostDate);
+        binding.companyjob.setText(companyName);
+        binding.jobLocationID.setText(jobLocation);
+        binding.jobDescriptionID.setText(jobDescription);
+        binding.salaryRangeID.setText(salaryRange);
+        binding.applyBeforeID.setText(applyBefore);
+        binding.jobPriceINrID.setText(jobPriceINR);
+        binding.rolesAndRespinsibilitiesID.setText(rolesAndRESPONSIBILITIES);
+        binding.postTimeID.setText(jobPostDate);
 
 
 
@@ -65,7 +65,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         try {
             Glide.with(JobDetailsActivity.this).load(jobImg)
                     .placeholder(R.drawable.avatar_placeholder)
-                    .into(binding.icJob);
+                    .into(binding.jobImgView);
         } catch (Exception e) {
             e.printStackTrace();
         }

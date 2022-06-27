@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.appstacks.indiannaukribazaar.Activities.ActivityMain;
 import com.appstacks.indiannaukribazaar.NewFragments.FindJobsFragments;
 import com.appstacks.indiannaukribazaar.R;
 
@@ -25,27 +26,23 @@ public class WelldoneActivity extends AppCompatActivity {
         Button goBackBTn = findViewById(R.id.goBackBtn);
 
 
-//        goBackBTn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                loadFragment(new FindJobsFragments());
-//                welldoneContainer.setVisibility(View.INVISIBLE);
-//
-//
-//
-//            }
-//        });
+
+
+       goBackBTn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               startActivity(new Intent(WelldoneActivity.this, ActivityMain.class));
+
+
+
+
+
+    }
+        });
     }
 
 
 
-//    private void loadFragment(Fragment fragment) {
-//        // load fragment
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.welldoneContainer, fragment);
-//        transaction.addToBackStack(null);
-//        transaction.commitAllowingStateLoss();
-//
-//
-//    }
+
 }
